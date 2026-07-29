@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace HickeryDickery
+namespace HickeryDickery.Player
 {
     [System.Serializable]
     public class PlayerPosition

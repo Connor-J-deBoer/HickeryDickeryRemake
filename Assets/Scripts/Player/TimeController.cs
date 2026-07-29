@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace HickeryDickery
+namespace HickeryDickery.Player
 {
     [RequireComponent(typeof(PlayerPositionTracking))]
     public class TimeController : MonoBehaviour
