@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HickeryDickery.Player
 {
-    public class PlayerLife : MonoBehaviour, IKillable
+    public class PlayerLife : MonoBehaviour, IPlayer, IKillable
     {
         [SerializeField] private PlayerMovement _movement;
         [SerializeField] private PlayerPositionTracking _positionTracking;
@@ -18,10 +18,22 @@ namespace HickeryDickery.Player
         public void Die()
         {
             Debug.Log("Player Died!");
+            DeactivatePlayer();
+            //TODO: Call some nice UI
+        }
+
+        public void Win()
+        {
+            Debug.Log("Player Won!");
+            DeactivatePlayer();
+            //TODO: Call some nice UI
+        }
+        private void DeactivatePlayer()
+        {
             _movement.enabled = false;
             _positionTracking.enabled = false;
             _timeController.enabled = false;
-            //TODO: Call some nice UI
+            Time.timeScale = 0;
         }
     }
 }
