@@ -19,6 +19,7 @@ namespace HickeryDickery.Player
         private float _input = 0;
         private bool _grounded = false;
         private bool _jumped = false;
+        private Vector3 _localDown;
         private void OnValidate()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -34,7 +35,8 @@ namespace HickeryDickery.Player
             if (_jumped)
                 _deltaVelocity.y = 0;
             // Check ground
-            _grounded = Physics.Raycast(transform.position, Vector3.down, _height);
+            _localDown = Physics.gravity.y > 0 ? Vector3.up : Vector3.down;
+            _grounded = Physics.Raycast(transform.position, _localDown, _height);
             // Reset jump count on ground
             if (_grounded)
                 _jumped = false;
@@ -47,7 +49,7 @@ namespace HickeryDickery.Player
         {
             if (_jumped || !_grounded)
                 return;
-            _deltaVelocity.y = _jumpVelocityDelta;
+            _deltaVelocity.y = Physics.gravity.y > 0 ? -_jumpVelocityDelta : _jumpVelocityDelta;
             _jumped = true;
         }
     }
