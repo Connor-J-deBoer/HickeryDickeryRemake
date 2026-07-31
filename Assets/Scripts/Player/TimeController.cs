@@ -18,7 +18,7 @@ namespace HickeryDickery.Player
         }
         private void Update()
         {
-            Time.timeScale = Mathf.Max(_timeDelta * Time.unscaledDeltaTime, 0);
+            Time.timeScale = Mathf.Clamp(_timeDelta * Time.unscaledDeltaTime, 0, 100);
             if (_timeDelta > 0)
                 _positions.AddPosition();
             else if (_timeDelta < 0)

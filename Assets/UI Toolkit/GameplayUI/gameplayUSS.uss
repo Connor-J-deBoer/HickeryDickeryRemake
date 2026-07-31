@@ -1,0 +1,13 @@
+.fancy-button {
+    background-color: rgba(255, 255, 255, 0);
+    scale: 1;
+}
+
+.fancy-button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.fancy-button:active {
+    scale: 0.9;
+}
+

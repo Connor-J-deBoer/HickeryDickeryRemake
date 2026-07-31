@@ -2,6 +2,7 @@
 }
 
 .main-menu-button {
+    scale: 1;
     max-width: none;
     flex-grow: 0;
     max-height: none;
@@ -26,4 +27,13 @@
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
+    transition: border-color 250ms ease-in-out;
+    transition: scale 100ms ease-in-out;
+}
+
+.main-menu-button:hover {
+    border-color: rgb(0, 255, 0);
+}
+.main-menu-button:active {
+    scale: 0.9
 }

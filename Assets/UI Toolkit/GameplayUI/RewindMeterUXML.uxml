@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="ShellOutside" style="flex-grow: 0; position: relative; top: 2%; left: 2%; width: 50%; height: 50px; background-color: rgb(54, 59, 75); border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; align-items: flex-start; justify-content: center; flex-shrink: 0; align-content: auto;">
+        <ui:VisualElement name="ShellInside" style="margin-left: 2.5%; height: 50%; width: 95%; background-color: rgb(45, 210, 221); border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; overflow: hidden; justify-content: center;">
+            <ui:VisualElement name="Fill" style="margin-left: 0; height: 80%; width: 100%; background-color: rgb(255, 255, 255); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; left: auto; top: auto;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -255,7 +255,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 52
+  m_VersionIndex: 55
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8080254072295529202}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c9ed30a535b79d588ec96b69c4af4bd, type: 3}
   m_Name: 
@@ -462,6 +462,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd9a4aa1f9974087befe843fa8bc64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.PlayerPositionTracking
+  _rewindUI: {fileID: 0}
+  _totalRewindTime: 100
   _rigidbody: {fileID: 5017401540492298449}
 --- !u!114 &5620603372019671184
 MonoBehaviour:
@@ -477,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Player.PlayerLife
   _movement: {fileID: 6309551801681887692}
   _positionTracking: {fileID: 3959201100404001725}
+  _death: {fileID: 0}
   _timeController: {fileID: 784854402871054042}
 --- !u!114 &2220149159336735210
 MonoBehaviour:
