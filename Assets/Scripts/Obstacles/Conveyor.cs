@@ -25,8 +25,8 @@ namespace HickeryDickery.Obstacles
 
         private void FixedUpdate()
         {
-            Physics.OverlapBoxNonAlloc(_center, _halfExtends, _cashedConvey, transform.rotation);
-            for (int i = 0; i < _cashedConvey.Length; ++i)
+            int count = Physics.OverlapBoxNonAlloc(_center, _halfExtends, _cashedConvey, transform.rotation);
+            for (int i = 0; i < count; ++i)
             {
                 if (_cashedConvey[i] == null)
                     continue;
@@ -35,8 +35,9 @@ namespace HickeryDickery.Obstacles
                 if (rb.linearVelocity.magnitude > _speed)
                     continue;
                 // The overlap box isn't over our collider
-                if (!Physics.Raycast(rb.position, Physics.gravity.normalized, out RaycastHit hit, 1))
+                if (!Physics.Raycast(rb.position, Physics.gravity.normalized, out RaycastHit hit))
                     continue;
+                Debug.Log("Convey");
                 Vector3 conveyForward = Vector3.ProjectOnPlane(transform.right, hit.normal);
                 Vector3 closestPoint = _cashedConvey[i].ClosestPoint(hit.point);
                 rb.AddForceAtPosition(conveyForward * _acceleration, closestPoint);
