@@ -36,7 +36,7 @@ namespace HickeryDickery.Player
             SetPlayerActive(false);
             _death?.OpenNotDeathMenu();
         }
-        private void SetPlayerActive(bool active)
+        public void SetPlayerActive(bool active)
         {
             _movement.enabled = active;
             _positionTracking.enabled = active;

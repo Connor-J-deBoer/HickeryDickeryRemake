@@ -5,17 +5,17 @@ using UnityEngine;
 
 namespace HickeryDickery.Player
 {
-    public class PlayerPositionTracking : MonoBehaviour
+    public class PlayerPositionTracking : MonoBehaviour, ITimeTraveler
     {
-        [SerializeField] private RewindMeterController _rewindUI;
-        [SerializeField] private float _totalRewindTime = 10;
         [SerializeField] private Rigidbody _rigidbody;
-        private PlayerPosition _start;
-        private float _rewindTime = 0;
+        private History _start;
+
+        public bool IsAtStart() => _start.Previous == null;
+        public History Start { get => _start; }
+
         private void OnValidate()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _rewindUI = FindAnyObjectByType<RewindMeterController>();
         }
         private void Awake()
         {
@@ -26,9 +26,9 @@ namespace HickeryDickery.Player
                 Previous = null
             };
         }
-        public void AddPosition()
+        public void RecordHistory()
         {
-            PlayerPosition newPosition = new ()
+            History newPosition = new ()
             {
                 Position = transform.position,
                 LinearVelocity = _rigidbody.linearVelocity,
@@ -37,18 +37,17 @@ namespace HickeryDickery.Player
                 Previous = _start
             };
             _start = newPosition;
-        }
-        public (Vector3, Vector3, Vector3, Quaternion) GetPreviousPosition()
+            }
+
+        public void TravelThroughHistory()
         {
-            if (_rewindTime >= _totalRewindTime)
-                return (transform.position, _rigidbody.linearVelocity, _rigidbody.angularVelocity, transform.rotation);
-            if (_start.Previous == null)
-                return _start.GetProperties();
-            PlayerPosition previous = _start;
-            _start = _start.Previous;
-            ++_rewindTime;
-            _rewindUI?.SetRewindMeter((1 - (_rewindTime / _totalRewindTime)) * 100);
-            return previous.GetProperties();;
+            History previous = _start;
+            previous.TravelBackwards(transform,_rigidbody);
+            if (_start.Previous != null)
+            {
+                _start = _start.Previous;
+            }
         }
+
     }
 }

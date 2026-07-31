@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 3959201100404001725}
   - component: {fileID: 5620603372019671184}
   - component: {fileID: 2220149159336735210}
+  - component: {fileID: 6717646838528321388}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -255,7 +256,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 55
+  m_VersionIndex: 79
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -350,7 +351,7 @@ Rigidbody:
   m_GameObject: {fileID: 8080254072295529202}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.5
   m_AngularDamping: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -375,7 +376,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8080254072295529202}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 43b8e970f72e5a55fbbb76b400f6c0b5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -403,9 +404,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.PlayerMovement
   _height: 1
   _maxVelocity: 10
-  _acceleration: 1000
+  _acceleration: 25
   _jumpVelocityDelta: 750
   _rigidbody: {fileID: 5017401540492298449}
+  _timeController: {fileID: 784854402871054042}
 --- !u!114 &4370783511978477512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9ed30a535b79d588ec96b69c4af4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.TimeController
-  _positions: {fileID: 3959201100404001725}
+  _timeRewinded: 0
+  _totalRewindTime: 1000
+  _controlTime: 0
+  _rewindUI: {fileID: 0}
   _rigidbody: {fileID: 5017401540492298449}
 --- !u!114 &3959201100404001725
 MonoBehaviour:
@@ -462,8 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd9a4aa1f9974087befe843fa8bc64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.PlayerPositionTracking
-  _rewindUI: {fileID: 0}
-  _totalRewindTime: 100
   _rigidbody: {fileID: 5017401540492298449}
 --- !u!114 &5620603372019671184
 MonoBehaviour:
@@ -497,3 +500,69 @@ MonoBehaviour:
   _spriteSheet: {fileID: 2800000, guid: f3ba456692ed9d47bbddd02f5090e584, type: 3}
   _textureWidth: 32
   _defaultIndex: 0
+--- !u!114 &6717646838528321388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080254072295529202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a7644c0bc82d9349be10473cb908df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.UIUX.PauseListener
+  OnGamePaused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HickeryDickery.UIUX.PauseMenuController, Assembly-CSharp
+        m_MethodName: OpenPauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5620603372019671184}
+        m_TargetAssemblyTypeName: HickeryDickery.Player.PlayerLife, Assembly-CSharp
+        m_MethodName: SetPlayerActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnGameUnPaused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HickeryDickery.UIUX.PauseMenuController, Assembly-CSharp
+        m_MethodName: ClosePauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5620603372019671184}
+        m_TargetAssemblyTypeName: HickeryDickery.Player.PlayerLife, Assembly-CSharp
+        m_MethodName: SetPlayerActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2

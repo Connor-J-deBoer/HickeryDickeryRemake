@@ -1,6 +1,8 @@
 // Copyright © Connor deBoer (MQG) 2026, All Rights Reserved
 
 using System.Collections;
+using System.Linq;
+using HickeryDickery.UIUX;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,14 +11,18 @@ namespace HickeryDickery.Player
     [RequireComponent(typeof(PlayerPositionTracking))]
     public class TimeController : MonoBehaviour
     {
+        [SerializeField] private float _timeRewinded = 0f;
+        [SerializeField] private float _totalRewindTime = 1000f;
         [SerializeField] private bool _controlTime = false;
-        [SerializeField] private PlayerPositionTracking _positions;
-        [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private ITimeTraveler[] _positions;
+        [SerializeField] private RewindMeterController _rewindUI;
         private float _timeDelta = 1;
+        private static WaitForSecondsRealtime _wait16msRealtime = new WaitForSecondsRealtime(0.016f);
+
         void OnValidate()
         {
-            _positions = GetComponent<PlayerPositionTracking>();
-            _rigidbody = GetComponent<Rigidbody>();
+            _rewindUI = FindAnyObjectByType<RewindMeterController>();
+            _positions = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ITimeTraveler>().ToArray();
             Time.timeScale = 1;
         }
         private void Start()
@@ -27,21 +33,31 @@ namespace HickeryDickery.Player
         {
             Time.timeScale = Mathf.Clamp(_timeDelta, 0, 100);
             
-            if (_timeDelta < 0)
-                (transform.position, _rigidbody.linearVelocity, _rigidbody.angularVelocity, transform.rotation) = _positions.GetPreviousPosition();
+            if (_timeDelta < 0 && _timeRewinded < _totalRewindTime)
+            {
+                foreach (var traveler in _positions)
+                {
+                    traveler.TravelThroughHistory();
+                    if (traveler.IsAtStart())
+                        continue;
+                    ++_timeRewinded;
+                    _rewindUI?.SetRewindMeter((1 - (_timeRewinded / _totalRewindTime)) * 100);
+                }
+            }
         }
 
         private IEnumerator CapturePositionInRealTime()
         {
             while (true)
             {
-
-                if (!_controlTime)
-                    yield return new WaitForSecondsRealtime(0.1f);
-                else
-                    yield return new WaitForEndOfFrame();
+                yield return _wait16msRealtime;
                 if (_timeDelta > 0)
-                    _positions.AddPosition();
+                {
+                    foreach (var traveler in _positions)
+                    {
+                        traveler.RecordHistory();
+                    }
+                }
             }
         }
         public bool ControllingTime() => _controlTime;

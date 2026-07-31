@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1202924010508268506}
   - component: {fileID: 685242737168669354}
-  - component: {fileID: 1215672487083356813}
+  - component: {fileID: 3459354779402730136}
   m_Layer: 0
   m_Name: DeathMenuManager
   m_TagString: Untagged
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
---- !u!114 &1215672487083356813
+--- !u!114 &3459354779402730136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5723121751402110934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5dce0b21e2d0d13a4e0de676c0faa1, type: 3}
+  m_Script: {fileID: 11500000, guid: 293574e120bff487db48d93ece2e9880, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.UIUX.PauseMenu
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.UIUX.DeathMenuController
   _document: {fileID: 685242737168669354}

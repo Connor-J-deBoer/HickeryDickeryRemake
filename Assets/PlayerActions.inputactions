@@ -209,11 +209,33 @@
                 },
                 {
                     "name": "",
+                    "id": "8b49fc4d-fa1b-4c6b-af46-057efd649fb9",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8f2ecb5e-32f0-41ac-a5ba-c7f8829c0b42",
                     "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "ToggleTimeControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37aaeacf-fe9e-4c3a-bc05-513f4c5e87ec",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
                     "action": "ToggleTimeControl",
                     "isComposite": false,
                     "isPartOfComposite": false
