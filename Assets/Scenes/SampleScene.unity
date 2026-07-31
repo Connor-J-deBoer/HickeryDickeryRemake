@@ -202,7 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 901475883}
     - target: {fileID: 862676207380041591, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
       propertyPath: m_VersionIndex
-      value: 58
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959201100404001725, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
+      propertyPath: _totalRewindTime
+      value: 10000000
       objectReference: {fileID: 0}
     - target: {fileID: 4489201230230240867, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
       propertyPath: m_LocalPosition.x

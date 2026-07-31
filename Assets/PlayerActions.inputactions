@@ -41,6 +41,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleTimeControl",
+                    "type": "Button",
+                    "id": "f51f0075-0d9d-4231-a8b7-14d25c90f8e0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -170,7 +179,7 @@
                     "id": "b9ed7a5d-3aa0-46af-8f64-9b40c8db87e9",
                     "path": "<Gamepad>/rightStick/x",
                     "interactions": "",
-                    "processors": "Scale(factor=200)",
+                    "processors": "Scale",
                     "groups": ";Gamepad",
                     "action": "TimeControl",
                     "isComposite": false,
@@ -181,7 +190,7 @@
                     "id": "f311effc-00d5-4e96-8fb1-c3d033d9cec2",
                     "path": "<Mouse>/scroll/y",
                     "interactions": "",
-                    "processors": "Scale(factor=1000)",
+                    "processors": "Scale(factor=10)",
                     "groups": ";Keyboard&Mouse",
                     "action": "TimeControl",
                     "isComposite": false,
@@ -195,6 +204,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f2ecb5e-32f0-41ac-a5ba-c7f8829c0b42",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ToggleTimeControl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
