@@ -1,0 +1,29 @@
+:root {
+}
+
+.main-menu-button {
+    max-width: none;
+    flex-grow: 0;
+    max-height: none;
+    flex-basis: auto;
+    flex-direction: row;
+    width: 350px;
+    height: 75px;
+    font-size: 32px;
+    margin: 15px;
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/RubikSprayPaint-Regular.ttf?fileID=12800000&guid=5cde241d201cc68eaa4844f5d721c18f&type=3#RubikSprayPaint-Regular");
+    color: rgb(255, 255, 255);
+    background-color: rgb(72, 72, 72);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+}

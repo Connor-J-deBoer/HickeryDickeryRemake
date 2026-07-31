@@ -21,7 +21,7 @@ namespace HickeryDickery
             int width = _spriteSheet.width;
             int cellCount = Mathf.RoundToInt(width / Mathf.Max(_textureWidth, Mathf.Epsilon));
             _textures = new Texture[cellCount];
-            Debug.Log(cellCount);
+            
             for (int i = 0; i < cellCount; ++i)
             {
                 Color[] pixels = _spriteSheet.GetPixels(i * _textureWidth, 0, _textureWidth, _spriteSheet.height);

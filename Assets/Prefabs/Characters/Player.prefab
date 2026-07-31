@@ -20,12 +20,13 @@ GameObject:
   - component: {fileID: 784854402871054042}
   - component: {fileID: 3959201100404001725}
   - component: {fileID: 5620603372019671184}
+  - component: {fileID: 2220149159336735210}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4489201230230240867
 Transform:
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 49
+  m_VersionIndex: 52
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -442,7 +443,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8080254072295529202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c9ed30a535b79d588ec96b69c4af4bd, type: 3}
   m_Name: 
@@ -477,3 +478,19 @@ MonoBehaviour:
   _movement: {fileID: 6309551801681887692}
   _positionTracking: {fileID: 3959201100404001725}
   _timeController: {fileID: 784854402871054042}
+--- !u!114 &2220149159336735210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080254072295529202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a07e817302fc9de80a904781c52402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.MaterialSpriteSheetAnimator
+  _renderer: {fileID: 3187227002683524821}
+  _spriteSheet: {fileID: 2800000, guid: f3ba456692ed9d47bbddd02f5090e584, type: 3}
+  _textureWidth: 32
+  _defaultIndex: 0

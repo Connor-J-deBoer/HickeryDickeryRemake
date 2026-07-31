@@ -1,0 +1,22 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenu/MaunMenuUSS.uss?fileID=7433441132597879392&amp;guid=4fedbc0fb03dc637494d1320537a4495&amp;type=3#MaunMenuUSS"/>
+    <ui:Label text="Hickery Dickery" name="Title" style="font-size: 64px; -unity-font-style: bold; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/RubikSprayPaint-Regular.ttf?fileID=12800000&amp;guid=5cde241d201cc68eaa4844f5d721c18f&amp;type=3#RubikSprayPaint-Regular&quot;); color: rgb(255, 255, 255); -unity-text-align: lower-center; margin-top: 25px;"/>
+    <ui:VisualElement name="Options" style="flex-grow: 1; justify-content: center; align-self: auto; min-width: auto; align-items: center; display: flex;">
+        <ui:Button text="Play!" name="Play" class="main-menu-button"/>
+        <ui:Button text="Level Select" name="LevelSelect" class="main-menu-button"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="Levels" style="flex-grow: 1; justify-content: space-between; align-self: auto; min-width: auto; align-items: flex-start; display: none; flex-direction: column; flex-wrap: wrap;">
+        <ui:Button text="← Back" name="Back" class="main-menu-button" style="flex-shrink: 1; width: auto;"/>
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;">
+            <ui:Button text="Level 1" name="LevelOne" class="main-menu-button"/>
+            <ui:Button text="Level 2" name="LevelTwo" class="main-menu-button"/>
+            <ui:Button text="Level 3" name="LevelThree" class="main-menu-button"/>
+            <ui:Button text="Level 4" name="LevelFour" class="main-menu-button"/>
+            <ui:Button text="Level 5" name="LevelFive" class="main-menu-button"/>
+            <ui:Button text="Live 6" name="LevelSix" class="main-menu-button"/>
+            <ui:Button text="Level 7" name="LevelSeven" class="main-menu-button"/>
+            <ui:Button text="Level 8" name="LevelEight" class="main-menu-button"/>
+            <ui:Button text="Level 9" name="LevelNine" class="main-menu-button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
