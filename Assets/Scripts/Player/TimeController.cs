@@ -44,6 +44,7 @@ namespace HickeryDickery.Player
                     _positions.AddPosition();
             }
         }
+        public bool ControllingTime() => _controlTime;
         private void OnTimeControl(InputValue value)
         {
             if (!_controlTime)

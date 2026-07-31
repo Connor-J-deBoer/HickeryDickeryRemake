@@ -37,7 +37,7 @@ namespace HickeryDickery.Obstacles
                 // The overlap box isn't over our collider
                 if (!Physics.Raycast(rb.position, Physics.gravity.normalized, out RaycastHit hit))
                     continue;
-                Debug.Log("Convey");
+                    
                 Vector3 conveyForward = Vector3.ProjectOnPlane(transform.right, hit.normal);
                 Vector3 closestPoint = _cashedConvey[i].ClosestPoint(hit.point);
                 rb.AddForceAtPosition(conveyForward * _acceleration, closestPoint);

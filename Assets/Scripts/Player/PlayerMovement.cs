@@ -15,6 +15,7 @@ namespace HickeryDickery.Player
         [SerializeField] private float _acceleration = 1000;
         [SerializeField] private float _jumpVelocityDelta = 750;
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private TimeController _timeController;
         private Vector3 _deltaVelocity = new ();
         private float _input = 0;
         private bool _grounded = false;
@@ -22,34 +23,39 @@ namespace HickeryDickery.Player
         private Vector3 _localDown;
         private void OnValidate()
         {
+            _timeController = GetComponent<TimeController>();
             _rigidbody = GetComponent<Rigidbody>();
             _rigidbody.maxLinearVelocity = _maxVelocity;
         }
-        private void Update()
+        private void FixedUpdate()
         {
             // This is a pretty primitive solution for movement, but I like how it feels with the time manipulation
             _rigidbody.AddForce(_deltaVelocity, ForceMode.Acceleration);
             // We use the analog input to add force left or right
-            _deltaVelocity.x = _input * _acceleration * Time.deltaTime;
+            _deltaVelocity.x = _input * _acceleration;
             // If we jumped, stop jumping
             if (_jumped)
                 _deltaVelocity.y = 0;
             // Check ground
-            _localDown = Physics.gravity.y > 0 ? Vector3.up : Vector3.down;
-            _grounded = Physics.Raycast(transform.position, _localDown, _height);
+            _grounded = Physics.Raycast(transform.position, Physics.gravity.normalized, _height);
             // Reset jump count on ground
             if (_grounded)
                 _jumped = false;
         }
         private void OnMove(InputValue value)
         {
+            if (!_grounded && !_timeController.ControllingTime())
+            {
+                _input = 0;
+                return;
+            }
             _input = value.Get<float>();
         }
         private void OnJump(InputValue _)
         {
             if (_jumped || !_grounded)
                 return;
-            _deltaVelocity.y = Physics.gravity.y > 0 ? -_jumpVelocityDelta : _jumpVelocityDelta;
+            _deltaVelocity += transform.up * _jumpVelocityDelta;
             _jumped = true;
         }
     }
