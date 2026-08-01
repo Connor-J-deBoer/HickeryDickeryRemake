@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6307881087116742366}
   - component: {fileID: 8821695725222858464}
   - component: {fileID: 6175470494932553892}
-  - component: {fileID: 3315013915052988985}
+  - component: {fileID: 7291055257143162951}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -31,10 +31,11 @@ Transform:
   m_GameObject: {fileID: 6565946790566561135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8871912666372260788}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8368684680544716022
@@ -249,7 +250,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 112
+  m_VersionIndex: 115
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -354,9 +355,9 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 0.25, z: 1}
+  m_Size: {x: 3, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3315013915052988985
+--- !u!114 &7291055257143162951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,7 +366,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 6565946790566561135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4345ac296156fd80d9a8f2ee91b2d609, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f6bf1f28194f6d5981be880a43a35f8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Obstacles.Spring
-  _springForce: 10000
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Characters.NPC.Gimmik.Teleporter
+  _maxSimultaneousActions: 5
+  _collider: {fileID: 6175470494932553892}
+  _teleportDestination: {fileID: 8871912666372260788}
+--- !u!1 &8045390125651998565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8871912666372260788}
+  m_Layer: 0
+  m_Name: Destination
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8871912666372260788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045390125651998565}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.88, y: 2.81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2765500327795856603}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

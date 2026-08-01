@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6784485317431851078}
   - component: {fileID: 6178089836873621946}
   - component: {fileID: 2424599806137697815}
-  - component: {fileID: 5008240520362258764}
+  - component: {fileID: 2037928831498282182}
   m_Layer: 0
   m_Name: Delayer
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3991331723261185769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 112
+  m_VersionIndex: 121
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -354,9 +354,9 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 0.25, z: 1}
+  m_Size: {x: 3, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5008240520362258764
+--- !u!114 &2037928831498282182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,7 +365,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3991331723261185769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4345ac296156fd80d9a8f2ee91b2d609, type: 3}
+  m_Script: {fileID: 11500000, guid: e16819802cd7de29a9a65de4e23d7aa7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Obstacles.Spring
-  _springForce: 10000
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Characters.NPC.Gimmik.Delayer
+  _maxSimultaneousActions: 5
+  _collider: {fileID: 2424599806137697815}
+  _delay: 10

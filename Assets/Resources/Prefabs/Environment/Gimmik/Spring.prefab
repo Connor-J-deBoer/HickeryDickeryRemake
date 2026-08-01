@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1482070364855824689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 0.168, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,4 +368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4345ac296156fd80d9a8f2ee91b2d609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Obstacles.Spring
+  _maxSimultaneousActions: 5
+  _collider: {fileID: 3517559506321369160}
   _springForce: 10000
