@@ -1,5 +1,6 @@
 // Copyright © Connor deBoer (MQG) 2026, All Rights Reserved
 
+using HickeryDickery.Characters.NPC.Gimmik;
 using HickeryDickery.UserInterface;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,6 +40,8 @@ namespace HickeryDickery.Characters.Player
             Debug.Log("Player Died!");
             SetPlayerActive(false);
             _dead = true;
+            if (TryGetComponent<TouchOfDeath>(out var touchOfDeath))
+                Destroy(touchOfDeath);
             var root = _uxmlLoader.Load("DeathMenuUXML");
             root.Q<Button>("Retry").RegisterCallback<ClickEvent>(evt =>
             {
@@ -52,6 +55,8 @@ namespace HickeryDickery.Characters.Player
             Debug.Log("Player Won!");
             SetPlayerActive(false);
             _won = true;
+            if (TryGetComponent<TouchOfDeath>(out var touchOfDeath))
+                Destroy(touchOfDeath);
             var root = _uxmlLoader.Load("WinMenuUXML");
             root.Q<Button>("Continue").RegisterCallback<ClickEvent>(evt =>
             {
