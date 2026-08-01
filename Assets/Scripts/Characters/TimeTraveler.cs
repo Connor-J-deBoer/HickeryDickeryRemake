@@ -10,12 +10,10 @@ namespace HickeryDickery.Characters
         private Rigidbody _rigidbody;
         public bool IsAtStart() => _start.Previous == null;
         public History Start { get => _start; }
-        private void OnValidate()
-        {
-            _rigidbody = GetComponent<Rigidbody>();
-        }
+
         private void Awake()
         {
+            _rigidbody = GetComponent<Rigidbody>();
             _start = new ()
             {
                 Position = transform.position,
@@ -25,11 +23,13 @@ namespace HickeryDickery.Characters
         }
         public void RecordHistory()
         {
+            Vector3 linearVelocity = _rigidbody != null ? _rigidbody.linearVelocity : Vector3.zero;
+            Vector3 angularVelocity = _rigidbody != null ? _rigidbody.angularVelocity : Vector3.zero;
             History newPosition = new ()
             {
                 Position = transform.position,
-                LinearVelocity = _rigidbody.linearVelocity,
-                AngularVelocity = _rigidbody.angularVelocity,
+                LinearVelocity = linearVelocity,
+                AngularVelocity = angularVelocity,
                 Rotation = transform.rotation,
                 Previous = _start
             };

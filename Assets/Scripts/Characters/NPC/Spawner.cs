@@ -2,24 +2,28 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace HickeryDickery.Characters.NPC
 {
     public class Spawner : MonoBehaviour
     {
         [SerializeField] private float _timeBetweenSpawn = 2;
+        [SerializeField] private float _automaticDespawnTime = 20f;
         [SerializeField] private int _poolSize = 10;
         [SerializeField] private GameObject _prefabToSpawn;
         [SerializeField] private Vector3 _bindPosition;
         [SerializeField] private Quaternion _bindRotation;
         private GameObject[] _pool;
         private int _currentPoolIndex = 0;
-        private void Start()
+        private void Awake()
         {
             _pool = new GameObject[_poolSize];
             for (int i = 0; i < _pool.Length; ++i)
             {
                 _pool[i] = Instantiate(_prefabToSpawn, _bindPosition, _bindRotation);
+                var despawner = _pool[i].AddComponent<Despawner>();
+                despawner.LifeTime = _automaticDespawnTime;
                 _pool[i].SetActive(false);
             }
             StartCoroutine(Respawner());
