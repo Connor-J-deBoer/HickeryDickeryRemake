@@ -588,7 +588,7 @@ MonoBehaviour:
   _timeBetweenSpawn: 2
   _automaticDespawnTime: 20
   _poolSize: 10
-  _prefabToSpawn: {fileID: 6469650956634067839, guid: 56306b79cb0d4553792326349ba6b29c, type: 3}
+  _prefabToSpawn: {fileID: 2228632838242732603, guid: e236b464a4e6a7a1d8a8079d6b185efa, type: 3}
   _bindPosition: {x: 15, y: 2, z: 0}
   _bindRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &384721553

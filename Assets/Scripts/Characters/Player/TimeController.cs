@@ -47,7 +47,7 @@ namespace HickeryDickery.Characters.Player
                         continue;
                     ++_timeSpentRewinding;
                     float percentLeft = (1 - (_timeSpentRewinding / _totalRewindTime)) * 100;
-                    _root.Q<VisualElement>("Fill").style.width = Length.Percent(percentLeft);
+                    _root.Q<VisualElement>("Fill").style.width = Length.Percent(Mathf.Clamp(percentLeft, 0, 100));
                 }
             }
         }
