@@ -11,6 +11,7 @@ namespace HickeryDickery.Characters.NPC
         [SerializeField] private float _timeBetweenSpawn = 2;
         [SerializeField] private float _automaticDespawnTime = 20f;
         [SerializeField] private int _poolSize = 10;
+        [SerializeField] private bool _autoSpawn = false;
         [SerializeField] private GameObject _prefabToSpawn;
         [SerializeField] private Vector3 _bindPosition;
         [SerializeField] private Quaternion _bindRotation;
@@ -21,12 +22,13 @@ namespace HickeryDickery.Characters.NPC
             _pool = new GameObject[_poolSize];
             for (int i = 0; i < _pool.Length; ++i)
             {
-                _pool[i] = Instantiate(_prefabToSpawn, _bindPosition, _bindRotation);
+                _pool[i] = Instantiate(_prefabToSpawn, _bindPosition, _bindRotation, transform);
                 var despawner = _pool[i].AddComponent<Despawner>();
                 despawner.LifeTime = _automaticDespawnTime;
                 _pool[i].SetActive(false);
             }
-            StartCoroutine(Respawner());
+            if (_autoSpawn)
+                StartCoroutine(Respawner());
         }
 
         private IEnumerator Respawner()
@@ -43,6 +45,22 @@ namespace HickeryDickery.Characters.NPC
                 gameObject.SetActive(true);
                 _currentPoolIndex = _currentPoolIndex < _poolSize - 1 ? _currentPoolIndex + 1 : 0;
             }
+        }
+
+        public void SpawnManual(Vector3 linearVelocity = default, Vector3 position = default, Quaternion rotation = default)
+        {
+            if (position == default)
+                position = _bindPosition;
+            if (rotation == default)
+                rotation = _bindRotation;
+            GameObject gameObject = _pool[_currentPoolIndex];
+            gameObject.SetActive(false);
+            gameObject.transform.SetPositionAndRotation(position, rotation);
+            gameObject.TryGetComponent(out Rigidbody rb);
+            rb.linearVelocity = linearVelocity;
+            rb.angularVelocity = Vector3.zero;
+            gameObject.SetActive(true);
+            _currentPoolIndex = _currentPoolIndex < _poolSize - 1 ? _currentPoolIndex + 1 : 0;
         }
     }
 }
