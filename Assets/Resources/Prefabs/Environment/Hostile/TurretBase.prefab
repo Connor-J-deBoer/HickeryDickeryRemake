@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3316275897365698407}
   - component: {fileID: 7854026190219973677}
   - component: {fileID: 2599193795779238966}
-  - component: {fileID: 7449103088195005303}
   m_Layer: 0
   m_Name: TurretHead
   m_TagString: Untagged
@@ -29,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4996171217107725011}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1, z: -0.04}
+  m_LocalRotation: {x: -0.13052624, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0.000051763658, y: 1.0000417, z: 0.000008523464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7528241275803668679}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
 --- !u!114 &1322151968124100767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +247,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 125
+  m_VersionIndex: 131
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -334,28 +333,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4996171217107725011}
   m_Mesh: {fileID: 0}
---- !u!64 &7449103088195005303
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4996171217107725011}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7050875907433095904
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +346,8 @@ GameObject:
   - component: {fileID: 4967589085370874757}
   - component: {fileID: 6150740779729133964}
   - component: {fileID: 8515132184395837832}
-  - component: {fileID: 4695512791065970281}
+  - component: {fileID: 1933999371493422440}
+  - component: {fileID: 7291838819392057235}
   m_Layer: 0
   m_Name: TurretBase
   m_TagString: Untagged
@@ -385,14 +363,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7050875907433095904}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalRotation: {x: 0.8191521, y: -0, z: -0, w: -0.5735764}
+  m_LocalPosition: {x: 3, y: 0, z: 1.615659}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5159667349269003657}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 250, y: 0, z: 0}
 --- !u!114 &9201319614813873540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,7 +583,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 92
+  m_VersionIndex: 98
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -691,25 +669,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7050875907433095904}
   m_Mesh: {fileID: 0}
---- !u!64 &4695512791065970281
-MeshCollider:
+--- !u!114 &1933999371493422440
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7050875907433095904}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb774418b41094bc92f1a57846c0a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Characters.NPC.Hostile.Turret
+  _fireRate: 1
+  _bulletSpeed: 10
+  _head: {fileID: 5159667349269003657}
+  _spawner: {fileID: 7291838819392057235}
+--- !u!114 &7291838819392057235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050875907433095904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdef54b558171cfe792a23069c6d2be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HickeryDickery.Characters.NPC.Spawner
+  _timeBetweenSpawn: 2
+  _automaticDespawnTime: 20
+  _poolSize: 10
+  _autoSpawn: 0
+  _prefabToSpawn: {fileID: 8820372654274426761, guid: 4bdbb596c03a9a93f9b8a9c947bb69f7, type: 3}
+  _bindPosition: {x: 0, y: 0, z: 0}
+  _bindRotation: {x: 0, y: 0, z: 0, w: 0}
