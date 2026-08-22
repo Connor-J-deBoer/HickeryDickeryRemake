@@ -24,14 +24,18 @@ namespace HickeryDickery.Characters.Player
         {
             _timeController = GetComponent<TimeController>();
             _rigidbody = GetComponent<Rigidbody>();
-            _rigidbody.maxLinearVelocity = _maxVelocity;
+            //_rigidbody.maxLinearVelocity = _maxVelocity;
         }
         private void FixedUpdate()
         {
-            // This is a pretty primitive solution for movement, but I like how it feels with the time manipulation
-            _rigidbody.AddForce(_deltaVelocity, ForceMode.Acceleration);
             // We use the analog input to add force left or right
             _deltaVelocity.x = _input * _acceleration;
+            // This is a pretty primitive solution for movement, but I like how it feels with the time manipulation
+            _rigidbody.AddForce(_deltaVelocity, ForceMode.Acceleration);
+            // Clamp horizontal speed only, leave vertical (jump/gravity) untouched
+            Vector3 velocity = _rigidbody.linearVelocity;
+            velocity.x = Mathf.Clamp(velocity.x, -_maxVelocity, _maxVelocity);
+            _rigidbody.linearVelocity = velocity;
             // If we jumped, stop jumping
             if (_jumped)
                 _deltaVelocity.y = 0;
@@ -49,6 +53,7 @@ namespace HickeryDickery.Characters.Player
                 return;
             }
             _input = value.Get<float>();
+            Debug.Log(_input);
         }
         private void OnJump(InputValue _)
         {

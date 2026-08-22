@@ -10,7 +10,7 @@ namespace HickeryDickery.Characters.NPC.Gimmik
 
         protected override void Gimmik(Rigidbody rigidbody, Collider collider, RaycastHit hit)
         {
-            rigidbody.AddForce(hit.normal * _springForce * Time.deltaTime, ForceMode.Impulse);
+            rigidbody.AddForce(hit.normal.normalized * _springForce * Time.deltaTime, ForceMode.Impulse);
         }
     }
 }

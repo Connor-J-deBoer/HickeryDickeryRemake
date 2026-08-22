@@ -2882,11 +2882,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2970f6ed2932bf956b8ff044a07b55e8, type: 2}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _speed
-      value: 850
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _acceleration
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7649302280124015050, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: m_Size.x
@@ -3191,11 +3191,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cb61f9f13f56e963b80c05c667aaf628, type: 2}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _speed
-      value: 850
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _acceleration
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7649302280124015050, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: m_Size.x
@@ -3623,7 +3623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153318797173935250, guid: 23b54920787760d82b67462451d08748, type: 3}
       propertyPath: _springForce
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5937251611618803046, guid: 23b54920787760d82b67462451d08748, type: 3}
       propertyPath: m_Mesh
@@ -5951,11 +5951,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2970f6ed2932bf956b8ff044a07b55e8, type: 2}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _speed
-      value: 850
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _acceleration
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7649302280124015050, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: m_Size.x
@@ -7429,7 +7429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4489201230230240867, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: -13.7
       objectReference: {fileID: 0}
     - target: {fileID: 4489201230230240867, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7462,6 +7462,10 @@ PrefabInstance:
     - target: {fileID: 4489201230230240867, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309551801681887692, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
+      propertyPath: _jumpVelocityDelta
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8080254072295529202, guid: 31a01e3cb6af77217a73597d9a26f67f, type: 3}
       propertyPath: m_Name
@@ -8474,7 +8478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153318797173935250, guid: 23b54920787760d82b67462451d08748, type: 3}
       propertyPath: _springForce
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5937251611618803046, guid: 23b54920787760d82b67462451d08748, type: 3}
       propertyPath: m_Mesh
@@ -10298,7 +10302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9216675694152670858, guid: e4591b4a043f72cbf8489a3424f8f621, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: -13.700001
       objectReference: {fileID: 0}
     - target: {fileID: 9216675694152670858, guid: e4591b4a043f72cbf8489a3424f8f621, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11557,7 +11561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588316607169472611, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.864
       objectReference: {fileID: 0}
     - target: {fileID: 1588316607169472611, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11592,12 +11596,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 447522895}
     - target: {fileID: 3424037647453587175, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424037647453587175, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3424037647453587175, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
       propertyPath: m_Center.x
-      value: -0.9294116
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424037647453587175, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
+      propertyPath: m_Center.z
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 4761419623833003987, guid: 9a32e4f951e307761badd8591848f2e1, type: 3}
       propertyPath: m_Mesh
@@ -12728,7 +12740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5153318797173935250, guid: 23b54920787760d82b67462451d08748, type: 3}
       propertyPath: _springForce
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5937251611618803046, guid: 23b54920787760d82b67462451d08748, type: 3}
       propertyPath: m_Mesh
@@ -12806,11 +12818,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2970f6ed2932bf956b8ff044a07b55e8, type: 2}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _speed
-      value: 850
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5009145412451355396, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: _acceleration
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7649302280124015050, guid: 5ee33b7388a52662d88b3c7d26c4187c, type: 3}
       propertyPath: m_Size.x
